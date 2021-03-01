@@ -162,8 +162,6 @@ public class DemoMergeSort {
     private BufferedWriter openOutputFile(){
         File file = new File(outputFileName);
         if(!file.exists()){
-            //TODO directory is not found?
-            //System.out.println("Output file not found. Creating new file (cft_out.txt) in local directory");
             try {
                 if(!file.createNewFile()){
                     throw new RuntimeException("Can't create new file");
@@ -250,29 +248,6 @@ public class DemoMergeSort {
             boolean isEOF = false;
             long valuesCount = 0L;
             long valuesRecorded = 0L;
-
-            /*
-            for example:
-            if file was like
-            1 5 9
-            2 6 10
-            3 7
-            4 8
-
-            and buffer size is 4
-
-            temp file wil be
-            10
-            9
-
-            and we have to rewrite
-            1 5
-            2 6
-            3 7
-            4 8
-
-            then we have n blocks of buffer size
-             */
 
             while(true){
                 buffer.clear();
